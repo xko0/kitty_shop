@@ -1,5 +1,5 @@
 module CartsHelper
   def find_cart
-    Cart.find(params[:id])
+    @cart = Cart.find(current_user.cart.id)
   end
 end
