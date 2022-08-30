@@ -47,6 +47,8 @@
             <div class="card-body">
             <div class="btn btn-warning btn-block btn-lg">Total :  </div>
             <%= @price %> €
+            <%=button_to 'Passer commande', orders_path, method: 'POST', class: "btn btn-primary btn-lg mt-3"%>
+
           </div>
         </div>
       </div>
