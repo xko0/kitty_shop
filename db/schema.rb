@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_30_102614) do
+ActiveRecord::Schema.define(version: 2022_08_30_123615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 2022_08_30_102614) do
   create_table "item_ordereds", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "order_id"
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_item_ordereds_on_item_id"
+    t.index ["order_id"], name: "index_item_ordereds_on_order_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -64,6 +68,8 @@ ActiveRecord::Schema.define(version: 2022_08_30_102614) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_ordereds", "items"
+  add_foreign_key "item_ordereds", "orders"
   add_foreign_key "orders", "users"
   add_foreign_key "purchases", "carts"
   add_foreign_key "purchases", "items"
