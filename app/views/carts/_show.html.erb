@@ -43,7 +43,12 @@
             </div>
           </div>
         <% end %>
-        <%=button_to 'passer commande', orders_path, method: "post", class:"btn btn-primary btn-lg mt-5"%>
+          <div class="card">
+            <div class="card-body">
+            <div class="btn btn-warning btn-block btn-lg">Total :  </div>
+            <%= @price %> €
+          </div>
+        </div>
       </div>
     </div>
   </div>
