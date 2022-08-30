@@ -1,4 +1,6 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     current_cart = find_cart
     Purchase.create!(cart_id: current_cart.id, item_id: params_item)
