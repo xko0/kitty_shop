@@ -3,4 +3,4 @@
   <% purchase = @current_cart.purchases.where(item_id: item.id).first %>
   <%= button_to 'Supprimer', purchase_path(purchase.id), class:"btn btn-outline-dark mt-auto", method: 'delete' %>
 <% end %>
-  <%= button_to 'Passer commande', orders_path, class:"btn btn-outline-dark mt-auto", method: 'post' %>
+  <%= button_to 'Passer commande', item_ordereds_path, class:"btn btn-outline-dark mt-auto", method: 'post' %>
