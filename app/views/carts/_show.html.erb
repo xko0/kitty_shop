@@ -1,0 +1,5 @@
+<% @items.each do |item| %>
+  <%= item.title %> <%= item.price %>
+  <% purchase = @current_cart.purchases.where(item_id: item.id).first %>
+  <%= button_to 'Supprimer', purchase_path(purchase.id), class:"btn btn-outline-dark mt-auto", method: 'delete' %>
+<% end %>

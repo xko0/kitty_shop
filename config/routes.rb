@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items, only: %i[index show]
   resources :carts, only: %i[show create update destroy]
+  resources :purchases, only: %i[create destroy]
 end
