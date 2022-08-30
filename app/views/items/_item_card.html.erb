@@ -3,11 +3,15 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
-                    <% if @item.picture.attached? %>
-                        <%= image_tag @item.picture, class:"card-img-top mb-5 mb-md-0"%>
-                    <% else %>
-                        <p>Mmmmh... 🤔 Pas d'image pour cette item</p>
-                    <% end %>
+                        <% if @item.picture.attached? %>
+                            <%= image_tag @item.picture, class:"card-img-top mb-5 mb-md-0"%>
+                        <% else %>
+                            <p>Mmmmh... 🤔 Pas d'image pour cette item</p>
+                            <%= form_tag do %>
+                                <%= file_field_tag :picture %>
+                                <%= submit_tag "uploader l'image dé lo potit chat" %>
+                            <% end %>
+                        <% end %>
                     </div>
                     <div class="col-md-6">
                         <div class="small mb-1">Ref: <%= @item.id %></div>
