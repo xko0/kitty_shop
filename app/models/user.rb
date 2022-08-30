@@ -4,4 +4,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  after_save :create_cart
+
+  def create_cart
+    Cart.create(user: self)
+  end
+
 end
