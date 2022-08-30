@@ -1,0 +1,55 @@
+<section>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://images.pexels.com/photos/691583/pexels-photo-691583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Sample image" style="width: auto; height: calc(100vh - 175px)" >
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">       
+        <h1 class="text-center">Editer mon profil</h1>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Attente de confirmation pour: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :password %> <i>(Laisser vide si aucun changement requis)</i><br />
+            <%= f.password_field :password, autocomplete: "nouveau mot de passe" %>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characteres minimum</em>
+            <% end %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "nouveau mot de passe" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :current_password %> <i>(Entrez votre mot de passe actuel pour confirmation)</i><br />
+            <%= f.password_field :current_password, autocomplete: "Mot de passe actuel" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Editer" %>
+          </div>
+        <% end %>
+
+        <h3>Supprimer mon compte</h3>
+
+        <p>Vous voulez nous quitter ? <%= button_to "Supprimer compte", registration_path(resource_name), data: { confirm: "Certain ?" }, method: :delete %></p>
+
+        <%= link_to "Retour", :back %>
+      </div>
+    </div>
+  </div>
+</section>
