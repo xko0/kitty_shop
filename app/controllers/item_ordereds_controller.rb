@@ -1,0 +1,2 @@
+class ItemOrderedsController < ApplicationController
+end
