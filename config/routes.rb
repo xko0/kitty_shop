@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :items, only: %i[index show], :path => 'image' do
     resources :pictures, only: [:create]
   end
-  resources :carts, only: %i[show create update destroy], :path => 'mon_panier'
+  resources :carts, only: %i[show create update destroy], :path => 'mon-panier'
   resources :purchases, only: %i[create destroy], :path => 'achat'
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
