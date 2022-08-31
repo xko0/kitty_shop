@@ -1,5 +1,5 @@
 module ItemsHelper
   def find_item
-    Item.find(params[:id])
+    Item.friendly.find(params[:id])
   end
 end
