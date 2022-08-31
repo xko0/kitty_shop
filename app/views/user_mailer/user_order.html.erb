@@ -10,7 +10,7 @@
     <ul>
       <%@order.items.each do |item| %>
       <li style= "list-style-type: none; margin-bottom: 12px"><%= image_tag item.picture , style: 'height: 220px; width:auto;' %><br>
-      <%=item.title%>, <%=item.price %> €<br>
+      <%=item.title%>, <%=item.price %> €</li><br>
       <li><a href ="<%= item.picture %>">Votre photo à télécharger ici</a><br></li>
       <% end %>
     </ul>

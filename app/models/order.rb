@@ -14,7 +14,8 @@ class Order < ApplicationRecord
     UserMailer.order_email(email_user).deliver_now
   end
 
-  def email_user
-    self.user.email
+  def admin_send(user)
+    @user = user
+    UserMailer.admin_email(user).deliver_now
   end
 end

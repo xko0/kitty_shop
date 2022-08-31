@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour <%= @user.email %> !</h1>
+    <p> une commande a été passé par <%= @order.user.email %> </p>
+    <strong>Voici le détail de sa commande :</strong>
+    <ul>
+      <%@order.items.each do |item| %>
+      <li style= "margin-bottom: 12px"><br>
+      <%=item.title%>, <%=item.price %> €</li><br>
+      <% end %>
+    </ul>
+  </body>
+</html>
