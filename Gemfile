@@ -67,3 +67,5 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'rspec'
 gem 'stripe'
+#Gemfile
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
