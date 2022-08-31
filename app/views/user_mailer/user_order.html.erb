@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour <%= @order.user.email %> !</h1>
+    <p> votre commande est bien passée </p>
+    <strong>Voici le détail de votre commande :</strong>
+    <ul>
+    <%@order.items.each do |item| %>
+    <li style= "list-style-type: none; margin-bottom: 12px"><%= image_tag item.picture , style: 'height: 220px; width:auto;' %><br>
+    <%=item.title%>, <%=item.price %> €</li>
+    <% end %>
+    </ul>
+    <p>En vous remerciant grandement pour votre achat et en espérant vous revoir prochainement sur notre site !</p>
+  </body>
+</html>
