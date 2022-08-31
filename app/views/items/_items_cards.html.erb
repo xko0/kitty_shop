@@ -4,7 +4,11 @@
     <div class="col mb-5">
         <div class="card h-100">
         <!-- Product image-->
-        <%= image_tag item.image_url, class: "card-img-top", alt: "picture of cat" %>
+        <% if item.picture.attached? %>
+          <%= image_tag item.picture, class:"card-img-top mb-5 mb-md-0"%>
+        <% else %>
+          <p>Mmmmh... 🤔 Pas d'image pour cette item</p>
+        <% end %>
         <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
@@ -16,7 +20,7 @@
           </div>
           <!-- Product actions-->
           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><%= link_to 'Détails', item_path(item.id), class:"btn btn-outline-dark mt-auto" %>
+            <div class="text-center"><%= link_to 'Détails', item_path(item), class:"btn btn-outline-dark mt-auto" %>
             </div>
             <div class="text-center">
               <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-outline-dark mt-2", method: 'post', params: { item_id: item.id } %>

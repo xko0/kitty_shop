@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   
-  #has_many :orders #purchases ?
+  has_many :orders 
 
   after_save :create_cart
 
@@ -15,8 +15,7 @@ class User < ApplicationRecord
     Cart.create(user: self)
   end
 
-  #def welcome_send
-    #UserMailer.welcome_email(self).deliver_now
-  #end 
-  
+  def admin?
+    current_user.admin == true
+  end
 end

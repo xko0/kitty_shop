@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align='center'>
 
 # KittyShop_15 🐱
@@ -84,3 +85,7 @@ Here the story telling :
 [Un Dev A La Mer](http://www.devalamer.fr/)
 
 Give us a ⭐ Star on GitHub — it helps!
+=======
+# README
+https://kitty-shop-team.herokuapp.com/
+>>>>>>> development
