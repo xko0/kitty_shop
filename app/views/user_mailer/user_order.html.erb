@@ -9,9 +9,9 @@
     <strong>Voici le détail de ta commande :</strong>
     <ul>
       <%@order.items.each do |item| %>
-      <li style= "list-style-type: none; margin-bottom: 12px"><%= image_tag item.picture , style: 'height: 220px; width:auto;' %><br>
+      <!--<li style= "list-style-type: none; margin-bottom: 12px"><%= image_tag item.picture , style: 'height: 220px; width:auto;' %><br>-->
       <%=item.title%>, <%=item.price %> €<br>
-      <li><a href ="<%= item.picture %>">Votre photo à télécharger ici</a><br></li>
+      <!--<li><a href ="<%= item.picture %>">Votre photo à télécharger ici</a><br></li>-->
       <% end %>
     </ul>
     <p>En vous remerciant grandement pour votre achat et en espérant vous revoir prochainement sur notre site !</p>
