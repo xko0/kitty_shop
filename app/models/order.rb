@@ -15,7 +15,7 @@ class Order < ApplicationRecord
   end
 
   def admin_send(user)
-    @user = user
-    UserMailer.admin_email(user).deliver_now
+    @user = User.where(admin: true).first.email
+    UserMailer.admin_email(@user).deliver_now
   end
 end
