@@ -60,14 +60,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'faker'
-gem 'table_print'
-gem 'rubocop'
-gem 'dotenv-rails'
-gem 'devise'
-gem 'rspec'
-gem 'stripe'
-gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
-
 gem 'aws-sdk-s3', require: false
-
+gem 'devise'
+gem 'dotenv-rails'
+gem 'faker'
+gem 'friendly_id', '~> 5.4.0'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+gem 'rspec'
+gem 'rubocop'
+gem 'stripe'
+gem 'table_print'

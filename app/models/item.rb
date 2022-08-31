@@ -8,4 +8,6 @@ class Item < ApplicationRecord
   has_many :item_ordereds
   has_many :orders, through: :item_ordereds
   has_one_attached :picture
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end
