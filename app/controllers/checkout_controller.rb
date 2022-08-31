@@ -28,6 +28,7 @@ class CheckoutController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
     @order = Order.create(user: current_user)
     @order.fill(find_cart)
+    UserMailer.user_order(@order).deliver_now
   end
 
   def cancel

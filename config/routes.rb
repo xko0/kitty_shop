@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admins do
+    resources :users
+    resources :orders, only: %i[edit update]
+    resources :items
+  end
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
+  resources :admins, only: [:index]
   resources :orders, only: [:create]
   resources :items, only: %i[index show], :path => 'image' do
     resources :pictures, only: [:create]

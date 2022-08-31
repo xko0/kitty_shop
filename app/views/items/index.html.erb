@@ -1,2 +1,7 @@
+<% if flash[:alert] %>
+<div class="alert alert-dismissible alert-success m-0">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button><%= flash[:alert] %>
+</div>
+<% end %>
 <%=render 'banner'%>
 <%= render 'items_cards' %>
