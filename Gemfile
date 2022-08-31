@@ -66,4 +66,4 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'rspec'
 gem 'stripe'
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
