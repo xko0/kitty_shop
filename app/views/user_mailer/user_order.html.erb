@@ -7,6 +7,7 @@
     <h1>Salut <%= @order.user.email %> !</h1>
     <p> ta commande est bien passée </p>
     <strong>Voici le détail de ta commande :</strong>
+    <!--
     <ul>
       <%@order.items.each do |item| %>
       <li style= "list-style-type: none; margin-bottom: 12px"><%= image_tag item.picture , style: 'height: 220px; width:auto;' %><br>
@@ -14,6 +15,7 @@
       <li><a href ="<%= item.picture %>">Votre photo à télécharger ici</a><br></li>
       <% end %>
     </ul>
+    -->
     <p>En vous remerciant grandement pour votre achat et en espérant vous revoir prochainement sur notre site !</p>
   </body>
 </html>
