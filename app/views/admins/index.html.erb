@@ -1,0 +1,53 @@
+<div class="text-center mt-5 mb-5">
+  <h1>Tableau de Bord Administrateur</h1>
+</div>
+
+<div class="accordion mb-5" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Liste des commandes
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+      <div class="accordion-body">
+        <div class="list-group">
+          <% @orders.each do |order| %>
+            <p class="list-group-item list-group-item-action">Commande de <%= order.user.email %> passée le <%= order.created_at.strftime("%d/%m/%Y à %T") %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion mb-5" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        Liste des items
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+      <div class="accordion-body">
+        <div class="list-group">
+          <% @items.each do |item| %>
+            <div class="list-group-item list-group-item-action d-flex justify-content-between">
+              <div>
+                <p><%= item.id %> | <%= item.title %></p>
+              </div>
+              <div>
+                <% if item.picture.attached? %>
+                  avec image
+                <% else %>
+                  sans image
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
