@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/mailjet/mailjet-gem.git
+  revision: acbd7221149dd1682f6db4a91d45cd7d5ecbf7aa
+  specs:
+    mailjet (1.7.1)
+      activesupport (>= 3.1.0)
+      rack (>= 1.4.0)
+      rest-client (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -99,6 +108,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -110,6 +121,9 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -118,6 +132,10 @@ GEM
       activesupport (>= 5.0.0)
     jmespath (1.6.1)
     json (2.6.2)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -130,11 +148,15 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.5.6)
+    netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.13.8-x86_64-linux)
+    nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
@@ -173,13 +195,18 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.1.1)
     rake (13.0.6)
-    rb-fsevent (0.11.1)
+    rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.5)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
@@ -236,7 +263,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stripe (7.0.0)
+    stripe (7.1.0)
     table_print (1.5.7)
     thor (1.2.1)
     thread_safe (0.3.6)
@@ -245,6 +272,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     unicode-display_width (2.2.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -261,7 +291,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  x86_64-linux
+  x86_64-darwin-20
 
 DEPENDENCIES
   aws-sdk-s3
@@ -274,7 +304,9 @@ DEPENDENCIES
   dotenv-rails
   faker
   jbuilder (~> 2.5)
+  letter_opener
   listen (>= 3.0.5, < 3.2)
+  mailjet!
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.8, >= 5.2.8.1)
@@ -294,4 +326,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.17
+   2.3.18

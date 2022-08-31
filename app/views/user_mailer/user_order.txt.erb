@@ -1,0 +1,10 @@
+Bonjour <%= @user.email %> !
+==========================================================
+ 
+Votre commande est bien passée.
+Voici le détail de votre commande :
+    <%@order.items.each do |item| %>
+    <%= image_tag item.picture , style: 'height: 220px; width:auto;' %><br>
+    <%=item.title%>, <%=item.price %> €
+    <% end %>
+    En vous remerciant grandement pour votre achat et en espérant vous revoir prochainement sur notre site !
