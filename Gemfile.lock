@@ -59,7 +59,7 @@ GEM
     ast (2.4.2)
     aws-eventstream (1.2.0)
     aws-partitions (1.624.0)
-    aws-sdk-core (3.137.0)
+    aws-sdk-core (3.138.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
       aws-sigv4 (~> 1.1)
@@ -159,12 +159,17 @@ GEM
     msgpack (1.5.6)
     netrc (0.11.0)
     nio4r (2.5.8)
+<<<<<<< HEAD
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+=======
+<<<<<<< HEAD
+    nokogiri (1.13.8-arm64-darwin)
+=======
+>>>>>>> acd9144ca38c71e4644efa17da6695c5d78238cc
     nokogiri (1.13.8-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
+>>>>>>> development
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
@@ -229,7 +234,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
-    rubocop (1.35.1)
+    rubocop (1.36.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.2.1)
@@ -299,9 +304,17 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+<<<<<<< HEAD
   ruby
+=======
+<<<<<<< HEAD
+  arm64-darwin-21
+=======
+
+>>>>>>> acd9144ca38c71e4644efa17da6695c5d78238cc
   x86_64-darwin-20
   x86_64-linux
+>>>>>>> development
 
 DEPENDENCIES
   aws-sdk-s3
