@@ -1,7 +1,8 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :item_ordereds
+  has_many :item_ordereds, dependent: :destroy
   has_many :items, through: :item_ordereds
+
 
   def fill(cart)
     cart.items.each do |item|

@@ -1,0 +1,35 @@
+<div class="text-center mt-5 mb-5">
+  <h1>Modification d'un item</h1>
+</div>
+
+<fieldset class="d-flex flex-column mx-auto mb-5" style="width: 50%">
+<%= form_with(url: admins_item_path(@item.id), method: "patch", local: true) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title, "Titre:", class: "form-label mt-4" %>
+      <%= f.text_field :title, class: "form-control", value: @item.title %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "Description:", class: "form-label mt-4" %>
+      <%= f.text_area :description, class: "form-control", value: @item.description%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price, "Prix:", class: "form-label mt-4" %>
+      <%= f.number_field :price, class: "form-control", value: @item.price%> 
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image_url, "Url de l'image", class: "form-label mt-4" %>
+      <%= f.text_field :image_url, class: "form-control", value: @item.image_url%>
+    </div>
+
+
+    <div class="d-flex w-100 justify-content-evenly">
+      <%= f.submit "Modifier l'item", class: "btn btn-primary mt-5" %> 
+      <%= link_to "retour", admins_path, class: "btn btn-outline-danger mt-5"%>
+    </div>   
+
+<% end %>        
+</fieldset>
