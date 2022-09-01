@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user.destroy_user
+    @user.destroy
     redirect_to root_path
   end
 
