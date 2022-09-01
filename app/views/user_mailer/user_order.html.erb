@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @order.user.email %> !</h1>
-    <p> ta commande est bien passée </p>
-    <strong>Voici le détail de ta commande :</strong>
+    <h1>Bonjour <%= @order.user.email %> !</h1>
+    <p> votre commande est bien passée </p>
+    <strong>Voici le détail de votre commande :</strong>
     <ul>
       <%@order.items.each do |item| %>
       <li style= "list-style-type: none; margin-bottom: 12px">
