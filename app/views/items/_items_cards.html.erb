@@ -23,7 +23,7 @@
             <div class="text-center"><%= link_to 'Détails', item_path(item.id), class:"btn btn-outline-dark mt-auto" %>
             </div>
             <div class="text-center">
-              <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-outline-dark mt-2", method: 'post', params: { item_id: item.id } %>
+              <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-outline-dark mt-2", method: 'post', params: { item_id: item.id }, remote: true%>
             </div>
           </div>
         </div>

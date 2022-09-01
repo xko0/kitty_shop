@@ -1,0 +1,4 @@
+<% @cart = Cart.where(user_id: current_user.id).first %>
+document.getElementById("number").innerText = "<%= @cart.items.length %>";
+document.getElementById("number").animate([{color: "blue"}, {color: "white"}], {duration: 650, iterations: 2});
+document.getElementById("number").animate([{ transform: 'rotate(15deg)'}, { transform: 'rotate(-15deg)'}, { transform: 'rotate(15deg)'}], {duration: 400,iterations: 2});
