@@ -1,0 +1,36 @@
+<div class="container-fluid text-center my-5">
+  <h1>Gestion des utilisateurs</h1>
+  <div class="d-flex w-50 mx-auto justify-content-evenly">
+    <%= link_to "retour au tableau de bord", admins_path, class: "btn btn-outline-dark btn-lg my-5" %>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row mx-5 justify-content-center">
+    <% @users.each do |user| %>
+      <div class="card mb-3 col-md-2 mx-4">
+        <h3 class="card-header"> prénom nom </h3>
+        <div class="card-body">
+          <h5 class="card-title">Nombre de commande passées: <%= user.orders.length %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= user.email %></li>
+          <li class="list-group-item">
+            date de la dernière commande: </br>
+            <% if user.orders.length > 0 %>
+              <strong><%= user.orders.last.created_at.strftime("%d/%m/%Y") %></strong>
+            <% else %>
+              <strong>Aucune commande</strong>
+            <% end %>
+          </li>
+          <div class="text-center d-flex justify-content-center w100 my-2">
+            <%= button_to "Supprimer", admins_user_path(user.id), method: :delete, class: "btn btn-danger" %>
+          </div>
+        </ul>
+        <div class="card-footer text-muted">
+          profil créé le <%= user.created_at.strftime("%d/%m/%Y")%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

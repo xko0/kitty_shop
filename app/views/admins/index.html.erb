@@ -1,6 +1,9 @@
-<div class="text-center my-5">
+<div class="container-fluid text-center my-5">
   <h1>Tableau de Bord Administrateur</h1>
-  <%= link_to "Ajouter un item", new_admins_item_path, class: "btn btn-success btn-lg my-5" %>
+  <div class="d-flex w-50 mx-auto justify-content-evenly">
+    <%= link_to "Ajouter un item", new_admins_item_path, class: "btn btn-success btn-lg my-5" %>
+    <%= link_to "Gestion des clients", admins_users_path, class: "btn btn-outline-dark btn-lg my-5" %>
+  </div>
 </div>
 
 
