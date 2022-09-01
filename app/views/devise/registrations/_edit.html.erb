@@ -1,19 +1,18 @@
 <section>
   <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center flex-grow-1">
       <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://images.pexels.com/photos/691583/pexels-photo-691583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="Sample image" style="width: auto; height: calc(100vh - 175px)" >
+        <%= image_tag "edit_profile_pic.jpeg", alt: "Sample image", style: "width: auto; height: calc(100vh - 175px)"%>
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">       
         <h1 class="text-center">Éditer mon profil</h1>
-
+        <br />
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
          
           <!-- email input -->
           <div class="field">
-            <%= f.label :email %><br />
+            <%= f.label :email, "Adresse e-mail" %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
           </div>
 
@@ -23,7 +22,8 @@
 
           <!-- Password input -->
           <div class="field">
-            <%= f.label :password %> <small>(Laisser vide si aucun changement requis)</small><br />
+            <br />
+            <%= f.label :password, "Nouveau mot de passe" %> <small>(Laisser vide si aucun changement requis)</small><br />
             <%= f.password_field :password, autocomplete: "nouveau mot de passe", class:"form-control" %>
             <% if @minimum_password_length %>
               <small><em><%= @minimum_password_length %> caractères minimum</em></small>
@@ -31,37 +31,40 @@
           </div>
           <br />
           <div class="field">
-            <%= f.label :password_confirmation %><small>(Votre nouveau mot de passe)</small><br />
+            <%= f.label :password_confirmation, "Confirmez votre nouveau mot de passe" %>
             <%= f.password_field :password_confirmation, autocomplete: "nouveau mot de passe", class:"form-control" %>
           </div>
-
+          <br />
           <div class="field">
-            <%= f.label :current_password %> <small>(Entrez votre mot de passe actuel pour confirmer les changements effectués)</small><br />
+            <%= f.label :current_password, "Mot de passe actuel" %> <small>(pour confirmer les changements effectués🔓)</small><br />
             <%= f.password_field :current_password, autocomplete: "Mot de passe actuel", class:"form-control" %>
           </div>
           <br />
 
           <!-- Names input -->
           <div class="form-outline mb-2">
-            <%= f.label :first_name %><br />
+            <%= f.label :first_name, "Prénom" %><br />
             <%= f.text_field :first_name, autofocus: true, autocomplete: "Prénom", class:"form-control" %>
           </div>
+          <br />
           <div class="form-outline mb-2">
-            <%= f.label :last_name %><br />
+            <%= f.label :last_name, "Nom" %><br />
             <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom", class:"form-control" %>
           </div>
           <br />
 
           <div class="actions">
-            <%= f.submit "Modifier", class:"btn btn-success btn px-3 mb-3" %>
+            <%= f.submit "Modifier 😺", class:"btn btn-success btn px-3 mb-3" %>
           </div>
+          <br />
         <% end %>
 
         <h3>Supprimer mon compte</h3>
         <small class="text-muted">(vous voulez vraiment nous quitter, pour de vrai ? 😿)</small>
+        <br />
         <%= button_to "Supprimer mon compte", registration_path(resource_name),class:"btn btn-danger btn px-3 mb-3", data: { confirm: "Certain ?" }, method: :delete %>
-        
         <%= link_to "Retour", :back %>
+        <br />
       </div>
     </div>
   </div>

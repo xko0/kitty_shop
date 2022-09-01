@@ -9,7 +9,7 @@
           <% purchase = @current_cart.purchases.where(item_id: item.id).first %>
           <div class="card rounded-3 mb-4">
             <div class="card-body p-4">
-              <div class="row d-flex justify-content-between align-items-center">
+              <div class="row d-flex justify-content-around align-items-center">
               
                 <!-- Product image-->
                 <div class="col-md-2 col-lg-2 col-xl-2">
@@ -38,20 +38,17 @@
 
                   <!-- Purchase -->
                   
-                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                </div>
               </div>
             </div>
           </div>
         <% end %>
         <div class="card">
           <div class="w-100 d-flex align-items-center p-3 justify-content-between">
-            <div class="btn btn-warning btn-block btn-lg">
+            <div class="badge bg-light fs-5">
               Total : <%= @price %> €
             </div>
             <div>
-              <%= button_to "Passer commande", checkout_create_path(total: @price), class: "btn btn-primary btn-lg", remote: true %>
+              <%= button_to "Passer commande", checkout_create_path(total: @price), class: "btn btn-primary", remote: true %>
             </div>
         </div>
       </div>
