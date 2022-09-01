@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!"><%= link_to 'KittyShop', root_path, class: "text-decoration-none link-dark" %></a>
+        <%= link_to 'KittyShop', root_path, class: "navbar-brand text-decoration-none link-dark" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -8,7 +8,7 @@
                     <li class="nav-item"><%= link_to "dashboard", admins_path, class: "nav-link active"%></li>
                 <% end %>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <% if user_signed_in? == false %>
                         <li><%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %></li>
@@ -25,7 +25,7 @@
                 <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
                     Panier
-                    <span class="badge bg-dark text-white ms-1 rounded-pill"><%= find_cart.items.length %></span>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill" id= "number"><%= find_cart.items.length %></span>
                 </button>
             </form>
             <% end %>

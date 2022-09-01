@@ -28,7 +28,11 @@
                 <% if already_in_cart?(item.id) %>
                   <span class= "text-success my-auto">Produit déja ajouté</span>
                 <% else %>
+<<<<<<< HEAD
                   <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-success", method: 'post', params: { item_id: item.id } %>
+=======
+                  <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-outline-dark mt-2", method: 'post', params: { item_id: item.id }, remote: true %>
+>>>>>>> development
                 <% end %>
               <% end %>
             </div>
