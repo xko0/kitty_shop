@@ -1,4 +1,4 @@
-<section class="h-100" style="background-color: black ;">
+<section class="flex-grow-1" style="background-color: black ;">
   <div class="container h-100 py-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-10">
@@ -29,10 +29,10 @@
 
                   <!-- Product suppr -->                
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <div class= "d-flex justify-content-center">
+                  <div class= "d-flex justify-content-center" id= "divbtn">
                     <%= button_to '-', purchase_path(purchase.id), class:"btn btn-outline-dark my-1", method: 'delete' %>
-                    <span class="badge bg-dark text-white mx-2 rounded-pill p-3"><%= @current_cart.purchases.where(item_id: item.id).count %></span>
-                    <%= button_to '+', purchases_path, class:"btn btn-outline-dark my-1", method: 'post', params: { item_id: item.id } %>
+                    <span class="badge bg-dark text-white mx-2 rounded-pill p-3" id="num"><%= @current_cart.purchases.where(item_id: item.id).count %></span>
+                    <%= button_to '+', purchases_path, class:"btn btn-outline-dark my-1", method: 'post', params: { item_id: item.id }, remote: true %>
                   </div> 
                 </div>
 
@@ -44,7 +44,7 @@
         <% end %>
         <div class="card">
           <div class="w-100 d-flex align-items-center p-3 justify-content-between">
-            <div class="badge bg-light fs-5">
+            <div class="badge bg-light fs-5" id="amount">
               Total : <%= @price %> €
             </div>
             <div>
