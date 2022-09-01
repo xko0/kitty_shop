@@ -23,21 +23,20 @@
 
           <!-- Password input -->
           <div class="field">
-            <%= f.label :password %> <i>(Laisser vide si aucun changement requis)</i><br />
+            <%= f.label :password %> <small>(Laisser vide si aucun changement requis)</small><br />
             <%= f.password_field :password, autocomplete: "nouveau mot de passe", class:"form-control" %>
             <% if @minimum_password_length %>
-              <br />
-              <em><%= @minimum_password_length %> caractères minimum</em>
+              <small><em><%= @minimum_password_length %> caractères minimum</em></small>
             <% end %>
           </div>
-
+          <br />
           <div class="field">
-            <%= f.label :password_confirmation %><br />
+            <%= f.label :password_confirmation %><small>(Votre nouveau mot de passe)</small><br />
             <%= f.password_field :password_confirmation, autocomplete: "nouveau mot de passe", class:"form-control" %>
           </div>
 
           <div class="field">
-            <%= f.label :current_password %> <i>(Entrez votre mot de passe actuel pour confirmation)</i><br />
+            <%= f.label :current_password %> <small>(Entrez votre mot de passe actuel pour confirmer les changements effectués)</small><br />
             <%= f.password_field :current_password, autocomplete: "Mot de passe actuel", class:"form-control" %>
           </div>
           <br />
@@ -54,13 +53,13 @@
           <br />
 
           <div class="actions">
-            <%= f.submit "Modifier", class:"btn btn-success disabled btn px-3 mb-3" %>
+            <%= f.submit "Modifier", class:"btn btn-success btn px-3 mb-3" %>
           </div>
         <% end %>
 
         <h3>Supprimer mon compte</h3>
-        <small class="text-muted">(vous voulez vraiment nous quittez ? 😿)</small>
-        <%= button_to "Supprimer mon compte", registration_path(resource_name),class:"btn btn-danger disabled btn px-3 mb-3", data: { confirm: "Certain ?" }, method: :delete %>
+        <small class="text-muted">(vous voulez vraiment nous quitter, pour de vrai ? 😿)</small>
+        <%= button_to "Supprimer mon compte", registration_path(resource_name),class:"btn btn-danger btn px-3 mb-3", data: { confirm: "Certain ?" }, method: :delete %>
         
         <%= link_to "Retour", :back %>
       </div>
