@@ -4,7 +4,6 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Accueil</a></li>
                 <% if user_signed_in? and current_user.admin %>
                     <li class="nav-item"><%= link_to "dashboard", admins_path, class: "nav-link active"%></li>
                 <% end %>
@@ -15,6 +14,7 @@
                         <li><%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %></li>
                         <li><%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item' %></li>
                         <%else%>
+                        <li><%= link_to "Mon profil", user_path, class: 'dropdown-item', method: :get %></li>
                         <li><%= link_to "Se déconnecter", destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
                         <%end%>     
                     </ul>
