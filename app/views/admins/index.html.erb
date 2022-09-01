@@ -1,6 +1,6 @@
-<div class="text-center mt-5 mb-5">
+<div class="text-center my-5">
   <h1>Tableau de Bord Administrateur</h1>
-  <%= link_to "Ajouter un item", new_admins_item_path, class: "btn btn-success btn-lg" %>
+  <%= link_to "Ajouter un item", new_admins_item_path, class: "btn btn-success btn-lg my-5" %>
 </div>
 
 
@@ -28,25 +28,58 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-        Liste des items
+        Liste des items actifs
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
       <div class="accordion-body">
         <div class="list-group">
           <% @items.each do |item| %>
-            <div class="list-group-item list-group-item-action d-flex justify-content-between">
-              <div>
-                <p><%= item.id %> | <%= item.title %></p>
+            <% if item.active %>
+              <div class="list-group-item list-group-item-action d-flex justify-content-between">
+                <div>
+                  <p><%= item.id %> | <%= item.title %></p>
+                </div>
+                <div class="d-flex w-25 justify-content-between">
+                  <%= link_to "Modifier", edit_admins_item_path(item.id), class: "btn btn-warning"%>
+                  <%= button_to "Désactiver", admins_item_path(item.id), method: :put, params: {active: false}, class: "btn btn-danger" %>
+                </div>
               </div>
-              <div>
-                <button type="button" class="btn btn-danger">Supprimer</button>
-              </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="accordion mb-5" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        Liste des items inactifs
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
+      <div class="accordion-body">
+        <div class="list-group">
+          <% @items.each do |item| %>
+            <% if item.active == false %>
+              <div class="list-group-item list-group-item-action d-flex justify-content-between">
+                <div>
+                  <p><%= item.id %> | <%= item.title %></p>
+                </div>
+                <div class="d-flex w-25 justify-content-between">
+                    <%= link_to "Modifier", edit_admins_item_path(item.id), class: "btn btn-warning"%>
+                    <%= button_to "Activer", admins_item_path(item.id), method: :put, params: {active: true}, class: "btn btn-success" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
