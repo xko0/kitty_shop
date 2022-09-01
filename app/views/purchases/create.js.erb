@@ -7,4 +7,3 @@ document.getElementById("num").innerText = "<%= @cart.purchases.where(item_id: i
 document.getElementById("number").innerText = "<%= @cart.purchases.where(item_id: item.id).count %>";
 <% end %>
 document.getElementById("amount").innerHTML = "Total: <%= @cart.calculate_price %>";
-
