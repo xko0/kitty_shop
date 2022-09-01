@@ -29,6 +29,7 @@ class CheckoutController < ApplicationController
     @order = Order.create(user: current_user)
     @order.fill(find_cart)
     UserMailer.user_order(@order).deliver_now
+    UserMailer.admin_email(@order).deliver_now
   end
 
   def cancel
