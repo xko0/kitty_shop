@@ -9,12 +9,11 @@
   <div class="row mx-5 justify-content-center">
     <% @users.each do |user| %>
       <div class="card mb-3 col-md-2 mx-4">
-        <h3 class="card-header"> prénom nom </h3>
+        <h5 class="card-header"><%= user.email %></h5>
         <div class="card-body">
-          <h5 class="card-title">Nombre de commande passées: <%= user.orders.length %></h5>
+          <strong class="card-title">Nombre de commande passées: <%= user.orders.length %></strong>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= user.email %></li>
           <li class="list-group-item">
             date de la dernière commande: </br>
             <% if user.orders.length > 0 %>
