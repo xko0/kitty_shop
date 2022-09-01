@@ -2,8 +2,9 @@
 document.getElementById("number").innerText = "<%= @cart.items.length %>";
 document.getElementById("number").animate([{color: "blue"}, {color: "white"}], {duration: 650, iterations: 2});
 document.getElementById("number").animate([{ transform: 'rotate(15deg)'}, { transform: 'rotate(-15deg)'}, { transform: 'rotate(15deg)'}], {duration: 400,iterations: 2});
-<% @cart.items.each do |item| %>
-document.getElementById("num").innerText = "<%= @cart.purchases.where(item_id: item.id).count %>";
-document.getElementById("number").innerText = "<%= @cart.purchases.where(item_id: item.id).count %>";
-<% end %>
-document.getElementById("amount").innerHTML = "Total: <%= @cart.calculate_price %>";
+var card = document.getElementById("card<%= @item_id %>");
+var newCard = document.createElement("div")
+newCard.classList.add("col")
+newCard.classList.add("mb-5")
+card.parentNode.replaceChild(newCard, card); 
+newCard.insertAdjacentHTML("beforeend", "<%= j render 'card',item: @item %>")
