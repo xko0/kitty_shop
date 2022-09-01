@@ -44,11 +44,11 @@
         <% end %>
         <div class="card">
           <div class="w-100 d-flex align-items-center p-3 justify-content-between">
-            <div class="btn btn-warning btn-block btn-lg">
+            <div class="badge bg-light fs-5">
               Total : <%= @price %> €
             </div>
             <div>
-              <%= button_to "Passer commande", checkout_create_path(total: @price), class: "btn btn-primary btn-lg", remote: true %>
+              <%= button_to "Passer commande", checkout_create_path(total: @price), class: "btn btn-primary", remote: true %>
             </div>
         </div>
       </div>
