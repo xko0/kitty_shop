@@ -1,15 +1,15 @@
 <div class="container px-4 px-lg-5 mt-5">
-  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+  <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
     <% @items.each do |item|%>
-    <div class="col mb-5">
+      <div class="col mb-5">
         <div class="card h-100">
-        <!-- Product image-->
-        <% if item.picture.attached? %>
-          <%= image_tag item.picture, class:"card-img-top mb-5 mb-md-0"%>
-        <% else %>
-          <p>Mmmmh... 🤔 Pas d'image pour cette item</p>
-        <% end %>
-        <!-- Product details-->
+          <!-- Product image-->
+          <% if item.picture.attached? %>
+            <%= image_tag item.picture, class:"card-img-top mb-5 mb-md-0"%>
+          <% else %>
+            <p>Mmmmh... 🤔 Pas d'image pour cette item</p>
+          <% end %>
+          <!-- Product details-->
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
@@ -18,16 +18,17 @@
               <%= item.price %> €
             </div>
           </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><%= link_to 'Détails', item_path(item), class:"btn btn-outline-dark mt-auto mb-2" %>
-          </div>
+            <!-- Product actions-->
+          <div class="d-flex justify-content-evenly flex-wrap py-4 border-top-0 bg-transparent">
             <div class="text-center">
+              <%= link_to 'Détails', item_path(item), class:"btn btn-outline-info my-2" %>
+            </div>
+            <div class="text-center my-2">
               <% if current_user %>
                 <% if already_in_cart?(item.id) %>
-                  <span class= "text">Produit déja ajouté</span>
+                  <span class= "text-success my-auto">Produit déja ajouté</span>
                 <% else %>
-                  <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-outline-dark mt-2", method: 'post', params: { item_id: item.id } %>
+                  <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-success", method: 'post', params: { item_id: item.id } %>
                 <% end %>
               <% end %>
             </div>
