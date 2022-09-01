@@ -158,7 +158,7 @@ GEM
     msgpack (1.5.6)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.13.8-arm64-darwin)
+    nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
@@ -293,7 +293,9 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  arm64-darwin-21
+
+  x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-s3
