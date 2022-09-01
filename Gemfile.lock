@@ -154,13 +154,20 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.5.6)
     netrc (0.11.0)
     nio4r (2.5.8)
 <<<<<<< HEAD
+<<<<<<< HEAD
     nokogiri (1.13.8-arm64-darwin)
 =======
+=======
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+>>>>>>> ede07d77dd62208c1c8649a0796b00cd6b55f20f
     nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.8-x86_64-linux)
@@ -300,8 +307,12 @@ GEM
 
 PLATFORMS
 <<<<<<< HEAD
+<<<<<<< HEAD
   arm64-darwin-21
 =======
+=======
+  ruby
+>>>>>>> ede07d77dd62208c1c8649a0796b00cd6b55f20f
   x86_64-darwin-20
   x86_64-linux
 >>>>>>> cfef132401f35cdb32084d79d9d23925e2c4d2c8
