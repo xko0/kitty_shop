@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h3 class="fw-normal mb-0 text-white">Votre panier</h3>
         </div>
-        <% @items.each do |item| %>
+        <% @items.uniq.each do |item| %>
           <% purchase = @current_cart.purchases.where(item_id: item.id).first %>
           <div class="card rounded-3 mb-4">
             <div class="card-body p-4">
@@ -13,7 +13,7 @@
               
                 <!-- Product image-->
                 <div class="col-md-2 col-lg-2 col-xl-2">
-                <%= image_tag item.picture, class: "img-fluid rounded-3", alt: "picture of cat" %>
+                <%= image_tag item.image_url, class: "img-fluid rounded-3", alt: "picture of cat" %>
                 </div>
               
                 <!-- Product details-->
@@ -27,9 +27,13 @@
                   <%= item.price %> €
                 </div>
 
-                  <!-- Product suppr -->
+                  <!-- Product suppr -->                
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <%= button_to 'Supprimer', purchase_path(purchase.id), class:"btn btn-outline-dark mt-auto", method: 'delete' %>
+                  <div class= "d-flex justify-content-center">
+                    <%= button_to '-', purchase_path(purchase.id), class:"btn btn-outline-dark my-1", method: 'delete' %>
+                    <span class="badge bg-dark text-white mx-2 rounded-pill p-3"><%= @current_cart.purchases.where(item_id: item.id).count %></span>
+                    <%= button_to '+', purchases_path, class:"btn btn-outline-dark my-1", method: 'post', params: { item_id: item.id } %>
+                  </div> 
                 </div>
 
                   <!-- Purchase -->
