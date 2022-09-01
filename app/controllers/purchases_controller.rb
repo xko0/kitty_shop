@@ -7,14 +7,14 @@ class PurchasesController < ApplicationController
     @item = Item.find(@item_id)
     Purchase.create!(cart_id: current_cart.id, item_id: @item_id)
     respond_to do |format|
-      format.html {redirect_to cart_path(current_cart)}
+      format.html { redirect_to cart_path(current_cart) }
       format.js {}
     end
   end
-  
+
   def destroy
     current_cart = find_cart
-    Purchase.destroy(params[:id])
+    Purchase.find(params[:id]).destroy
     redirect_to cart_path(current_cart)
   end
 
