@@ -29,7 +29,21 @@
               </div>
             </div>
           </div>
-        <% end %>
+          <!-- Product actions-->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><%= link_to 'Détails', item_path(item), class:"btn btn-outline-dark mt-auto mb-2" %>
+          </div>
+            <div class="text-center">
+              <% if already_in_cart?(item.id) %>
+                <span class= "text">Produit déja ajouté</span>
+              <% else %>
+                <%= button_to 'Ajouter au panier', purchases_path, class:"btn btn-outline-dark mt-2", method: 'post', params: { item_id: item.id } %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
