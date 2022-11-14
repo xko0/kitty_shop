@@ -5,11 +5,7 @@
         <div class="col mb-5" id="card<%= item.id %>">
           <div class="card h-100">
             <!-- Product image-->
-            <% if item.picture.attached? %>
-              <%= image_tag item.picture, class:"card-img-top mb-5 mb-md-0"%>
-            <% else %>
-              <p>Mmmmh... 🤔 Pas d'image pour cette item</p>
-            <% end %>
+              <%= image_tag item.image_url, class:"card-img-top mb-5 mb-md-0"%>
             <!-- Product details-->
             <div class="card-body p-4">
               <div class="text-center">

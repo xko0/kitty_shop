@@ -78,14 +78,16 @@ Here the story telling :
 
 ![rain](https://media3.giphy.com/media/YBsd8wdchmxqg/giphy.gif?cid=ecf05e47r23vkhct2dmu593ewqi3k92moca32hycg62hvk0b&rid=giphy.gif&ct=g)
 
+## Preview
 
+### Homepage
 
-## Show your support
+<img src="public/homepagecat.png">
 
-[Un Dev A La Mer](http://www.devalamer.fr/)
+### Login page
 
-Give us a ⭐ Star on GitHub — it helps!
-=======
-# README
-https://kitty-shop-team.herokuapp.com/
->>>>>>> development
+<img src="public/loginpage.png">
+
+### Cart page
+
+<img src="public/cart.png">
